@@ -18,14 +18,19 @@ elif age < 18:
 else:
   print("Oh, so you aren't young. Well, that doesn't stop you from talking to me does it?")
 
-print("Well, it's nice talking to you, but Me is incomplete, because Me doesn't know when its creator will decide whether or not to continue building me, so this is the last thing Me does.\n\n")
+print("Well, it's nice talking to you, but Me is incomplete, because Me doesn't know when its creator will decide whether or not to continue building me, so this is the last thing Me does.\n")
 
 num = 0
 
 while True:
-  add = int(input("Give Me a number to add that's not zero: "))
-  if add == 0:
-    break
-  num += add
+  
+  try:
+    add = int(input("\nKeep giving Me a number to add, and say zero to get a sum: "))
+    if add == 0:
+      break
+    num += add
 
+  except ValueError:
+    print("That is not an number. Please try again.")
+    
 print("The total is %d. Well, Me's job is done here, goodbye!" % num)
